@@ -202,14 +202,14 @@ def neuroevolution(nn, eval_fn, n_pop, n_gen, r_xover, r_mut, verbose=False):
 
 # When this module is executed directly, demonstrate XOR test.
 if __name__ == '__main__':
-    nnet = MLP(2, 1, 3, 1)
+    nnet = MLP(2, 1, 2, 1)
 
     def eval_fn(nnet):
         err = 0.0
-        err += abs(nnet.feedforward([1.0, 1.0])[0] - 0.0)
-        err += abs(nnet.feedforward([1.0, 0.0])[0] - 1.0)
-        err += abs(nnet.feedforward([0.0, 1.0])[0] - 1.0)
-        err += abs(nnet.feedforward([0.0, 0.0])[0] - 0.0)
+        err += (nnet.feedforward([1.0, 1.0])[0] - 0.0) ** 2
+        err += (nnet.feedforward([1.0, 0.0])[0] - 1.0) ** 2
+        err += (nnet.feedforward([0.0, 1.0])[0] - 1.0) ** 2
+        err += (nnet.feedforward([0.0, 0.0])[0] - 0.0) ** 2
         return err/4.,
 
-    neuroevolution(nnet, eval_fn, 50, 100, 0.3, 0.3, verbose=True)
+    neuroevolution(nnet, eval_fn, 50, 50, 0.2, 0.2, verbose=True)
