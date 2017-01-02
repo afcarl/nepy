@@ -27,7 +27,7 @@ section 4, provided you include this license notice and a URL
 through which recipients can access the Corresponding Source.
 
 @licend    The above is the entire license notice
-for the Go code in this page.
+for the Python code in this page.
 
 '''
 
@@ -212,4 +212,4 @@ if __name__ == '__main__':
         err += abs(nnet.feedforward([0.0, 0.0])[0] - 0.0)
         return err/4.,
 
-    neuroevolution(nnet, eval_fn, 50, 50, 0.3, 0.3, verbose=True)
+    neuroevolution(nnet, eval_fn, 50, 100, 0.3, 0.3, verbose=True)
