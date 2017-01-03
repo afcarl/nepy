@@ -3,7 +3,7 @@
 ne.py NeuroEvolution implemented in Python
 
 @licstart   The following is the entire license notice for
-the Go code in this page.
+the Python code in this page.
 
 Copyright (C) 2016 jin yeom
 
