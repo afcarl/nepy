@@ -112,6 +112,7 @@ class MLP(object):
         
         return output_layer.tolist() 
 
+
 '''
     neuroevolution() is an implementation of conventional direct encoding NeuroEvolution
     algorithm. A neural network's genotype is encoded as a list of connection weights. This
