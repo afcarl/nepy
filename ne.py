@@ -113,34 +113,6 @@ class MLP(object):
         return output_layer.tolist() 
 
 '''
-    MLPK is an implementation of a Multilayer Perceptron with Keras. It is initialized given
-    a number of inputs, a number of hidden layers, a number of neurons in a hidden layer, and
-    a number of outputs.
-'''
-
-from keras import models
-from keras import layers
-
-class MLPK(object):
-    def __init__(num_inputs, num_hidden_layers, num_hidden_neurons, num_outputs):
-        self.num_inputs = num_inputs
-        self.num_hidden_layers = num_hidden_layers
-        self.num_hidden_neurons = num_hidden_neurons
-        self.num_outputs = num_outputs
-
-        self.model = models.Sequential()
-        self.model.add(layers.Dense(num_hidden_neurons, inputs_dim=num_inputs))
-        self.model.add(layers.Activation('tanh'))
-        for i in range(num_hidden_layers):
-            self.model.add(layers.Dense(num_hidden_neurons))
-            self.model.add(layers.Activation('tanh'))
-        self.model.add(layers.Dense(num_outputs))
-        self.model.add(layers.Activation('sigmoid'))
-
-    def feedforward(self, inputs):
-
-
-'''
     neuroevolution() is an implementation of conventional direct encoding NeuroEvolution
     algorithm. A neural network's genotype is encoded as a list of connection weights. This
     function can be executed by providing a neural network (MLP), an evaluation function which
